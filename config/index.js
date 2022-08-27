@@ -16,8 +16,8 @@ export const config = {
     city: "遵义",
     // 生日，修改名字为对应需要显示的名字，如果生日为农历， type为 r
     birthdays: [
-      {"name": "老婆", "year": "2000", "date": "01-14", "type": 'new'},
-      {"name": "家公", "year": "1995", "date": "11-05", "type": 'new'},
+      {"name": "老婆", "year": "1999", "date": "12-17", "type": 'r'},
+      {"name": "家公", "year": "1995", "date": "09-13", "type": 'r'},
     ],
     // 在一起的日子，格式同上
     loveDate: "2022-07-12",
