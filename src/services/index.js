@@ -114,31 +114,8 @@ import dayjs from 'dayjs'
     birthdayList.forEach(birthday => {
         let birthdayMessage = null
         // 获取距离下次生日的时间
-        let nextBir = 0
-        if(birthday.type === "r"){
-            nextBir = dayjs(dayjs().format('YYYY') + '-' + birthday.date).diff(dayjs(), 'day')
-        }
-        else{
-            let bDate = new Date(dayjs().format("YYYY") + '-' + birthday.date).toLocaleDateString()
-            bDate = bDate.substring(5) // 获取生日日期
-            let date = new Date();
-            let count = 2000 // 防止填错日期
-            while (true && count > 0)
-            {
-                let nowDate = date.toLocaleDateString('en-Hans-u-ca-chinese')
-                nowDate = nowDate.substring(0,nowDate.length - 5)
-                if(nowDate != bDate){
-                    date.setDate(date.getDate()+1)
-                    count++;
-                }
-                else{
-                    break
-                }
-            }
-            let now = new Date()
-            nextBir = (0|(date.getTime()/(1*24*60*60*1000))) - (0|(now.getTime()/(1*24*60*60*1000)))
-        }
-        
+        let nextBir = dayjs(dayjs().format('YYYY') + '-' + birthday.date).diff(dayjs(), 'day')
+
         if (nextBir === 0) {
             birthdayMessage = `今天是 ${birthday.name} 生日哦，祝${birthday.name}生日快乐！`
         } else if (nextBir > 0 ) {
