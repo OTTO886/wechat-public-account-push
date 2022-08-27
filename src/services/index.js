@@ -114,8 +114,12 @@ import dayjs from 'dayjs'
     birthdayList.forEach(birthday => {
         let birthdayMessage = null
         // 获取距离下次生日的时间
-        let nextBir = dayjs(dayjs().format('YYYY') + '-' + birthday.date).diff(dayjs(), 'day')
-
+        let nextBir = 0
+        if(birthday.type === "new"){
+            nextBir = dayjs(dayjs().format('YYYY') + '-' + birthday.date).diff(dayjs(), 'day')
+        }
+        
+        
         if (nextBir === 0) {
             birthdayMessage = `今天是 ${birthday.name} 生日哦，祝${birthday.name}生日快乐！`
         } else if (nextBir > 0 ) {
