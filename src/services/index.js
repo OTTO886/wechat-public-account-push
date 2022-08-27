@@ -118,7 +118,15 @@ import dayjs from 'dayjs'
         if(birthday.type === "new"){
             nextBir = dayjs(dayjs().format('YYYY') + '-' + birthday.date).diff(dayjs(), 'day')
         }
-        
+        else {
+            let bDate = new Date(dayjs().format("YYYY") + '-' + birthday.date).toLocaleDateString()
+            bDate = bDate.substring(5) // 获取生日日期
+            let date = new Date();
+            let count = 2000 // 防止填错日期
+            
+            let now = new Date()
+            nextBir = (0|(date.getTime()/(1*24*60*60*1000))) - (0|(now.getTime()/(1*24*60*60*1000)))
+        }
         
         if (nextBir === 0) {
             birthdayMessage = `今天是 ${birthday.name} 生日哦，祝${birthday.name}生日快乐！`
