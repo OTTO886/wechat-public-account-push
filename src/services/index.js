@@ -129,6 +129,7 @@ import dayjs from 'dayjs'
                 nowDate = nowDate.substring(0,nowDate.length - 5)
                 if(nowDate != bDate){
                     date.setDate(date.getDate()+1)
+                    count++;
                 }
                 else{
                     break
