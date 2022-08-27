@@ -121,7 +121,7 @@ import dayjs from 'dayjs'
         else {
             let bDate = new Date(dayjs().format("YYYY") + '-' + birthday.date).toLocaleDateString()
             console.log(`bDate:${bDate}`)
-            bDate = bDate.substring(5) // 获取生日日期
+            bDate = bDate.substring(0,bDate.length - 5) // 获取生日日期
             console.log(`bDate:${bDate}`)
             let date = new Date();
             let count = 2000 // 防止填错日期
