@@ -124,6 +124,11 @@ import dayjs from 'dayjs'
             let date = new Date();
             let count = 2000 // 防止填错日期
             
+            while ( count > 0)
+            {
+                count--
+            }
+            
             let now = new Date()
             nextBir = (0|(date.getTime()/(1*24*60*60*1000))) - (0|(now.getTime()/(1*24*60*60*1000)))
         }
