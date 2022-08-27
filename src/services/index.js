@@ -138,6 +138,7 @@ import dayjs from 'dayjs'
             }
             
             let now = new Date()
+            console.log("天数---- " + count)
             nextBir = (0|(date.getTime()/(1*24*60*60*1000))) - (0|(now.getTime()/(1*24*60*60*1000)))
         }
         
