@@ -128,7 +128,7 @@ import dayjs from 'dayjs'
             {
                 let nowDate = date.toLocaleDateString('en-Hans-u-ca-chinese')
                 nowDate = nowDate.substring(0,nowDate.length - 5)
-                if(nowDate != bDate){
+                if(nowDate !== bDate){
                     date.setDate(date.getDate()+1)
                     count--;
                 }
