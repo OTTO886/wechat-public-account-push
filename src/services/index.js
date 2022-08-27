@@ -120,19 +120,14 @@ import dayjs from 'dayjs'
         }
         else {
             let bDate = new Date(dayjs().format("YYYY") + '-' + birthday.date).toLocaleDateString()
-            console.log(`bDate:${bDate}`)
             bDate = bDate.substring(0,bDate.length - 5) // 获取生日日期
-            console.log(`bDate:${bDate}`)
             let date = new Date();
             let count = 2000 // 防止填错日期
             
             while ( count > 0)
             {
                 let nowDate = date.toLocaleDateString('en-Hans-u-ca-chinese')
-                console.log(`nowDate:${nowDate}`)
                 nowDate = nowDate.substring(0,nowDate.length - 5)
-                console.log(`nowDate:${nowDate}`)
-                //console.log(`bDate:${bDate}\nnowDate${nowDate}`)
                 if(nowDate !== bDate){
                     date.setDate(date.getDate()+1)
                     count--;
@@ -143,7 +138,6 @@ import dayjs from 'dayjs'
             }
             
             let now = new Date()
-            console.log("天数---- " + count)
             nextBir = (0|(date.getTime()/(1*24*60*60*1000))) - (0|(now.getTime()/(1*24*60*60*1000)))
         }
         
