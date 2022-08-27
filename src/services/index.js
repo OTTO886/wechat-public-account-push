@@ -115,7 +115,7 @@ import dayjs from 'dayjs'
         let birthdayMessage = null
         // 获取距离下次生日的时间
         let nextBir = 0
-        if(birthday.type === "new"){
+        if(birthday.type === "r"){
             nextBir = dayjs(dayjs().format('YYYY') + '-' + birthday.date).diff(dayjs(), 'day')
         }
         else{
